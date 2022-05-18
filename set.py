@@ -21,7 +21,7 @@ async def run():
     await server.listen(8470)
     bootstrap_node = (sys.argv[1], int(sys.argv[2]))
     await server.bootstrap([bootstrap_node])
-    await server.set(sys.argv[3], pickle.dumps(sys.argv[4]))
+    await server.set(sys.argv[3], sys.argv[4])
     server.stop()
 
 asyncio.run(run())

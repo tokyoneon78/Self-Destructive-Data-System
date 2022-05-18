@@ -22,7 +22,7 @@ async def run():
     await server.bootstrap([bootstrap_node])
 
     result = await server.get(sys.argv[3])
-    await print("Get result:", result)
     server.stop()
-
+    print(pickle.loads(result))
 asyncio.run(run())
+print("I am runnig while that is happening")

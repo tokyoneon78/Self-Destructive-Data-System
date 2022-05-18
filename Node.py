@@ -1,4 +1,4 @@
-
+import pickle
 import logging
 import asyncio
 
@@ -18,6 +18,7 @@ loop.set_debug(True)
 server = Server()
 loop.run_until_complete(server.listen(8469))
 loop.run_until_complete(server.bootstrap([bootstrap_node]))
+loop.run_until_complete(server.set('name', pickle.dumps(["pls work for me", 5, 9])))
 
 try:
     loop.run_forever()
